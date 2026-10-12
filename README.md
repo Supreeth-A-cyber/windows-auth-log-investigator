@@ -80,6 +80,10 @@ windows-auth-log-investigator/
 
 This project is for defensive cybersecurity education using logs from my own Windows environment. Findings are limited to the evidence examined. Sensitive information and raw personal logs should not be published.
 
----
+## 📷 Investigation Evidence
 
-*Building practical blue-team skills through evidence-based investigation.*
+The following sanitized screenshot shows a Windows Security Event ID 4625 (failed logon) examined during this investigation.
+
+![Sanitized Windows Event 4625 evidence](failed-logon-events.png)
+
+The screenshot hides the computer name and exact event timestamp while retaining the relevant technical fields.
