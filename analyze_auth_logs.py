@@ -2,6 +2,8 @@ import csv
 from collections import Counter
 
 LOG_FILE = "sample_auth_events.csv"
+REPORT_FOLDER = "reports"
+REPORT_FILE = "authentication_analysis_report.txt"
 
 failed_logons = []
 successful_logons = []
@@ -46,6 +48,34 @@ try:
         print("Repeated failed logons detected. Review the related events before deciding whether activity is suspicious.")
     else:
         print("No sources met the review threshold in this sample.")
+
+        
+    # Save the analysis results to a report file
+    import os
+
+    os.makedirs(REPORT_FOLDER, exist_ok=True)
+    report_path = os.path.join(REPORT_FOLDER, REPORT_FILE)
+
+    with open(report_path, "w", encoding="utf-8") as report:
+        report.write("Authentication Log Analysis Report\n")
+        report.write("=" * 40 + "\n")
+        report.write(f"Failed logons: {len(failed_logons)}\n")
+        report.write(f"Successful logons: {len(successful_logons)}\n\n")
+        report.write("Failed logons by source:\n")
+
+        for source, count in failures_by_source.items():
+            report.write(f"{source}: {count}\n")
+
+        report.write("\nAnalyst Assessment:\n")
+        if found:
+            report.write(
+                "Repeated failed logons detected. Review related events "
+                "before deciding whether activity is suspicious.\n"
+            )
+        else:
+            report.write("No sources met the review threshold in this sample.\n")
+
+    print(f"\nReport saved to: {report_path}")
 
 except FileNotFoundError:
     print(f"Error: Could not find {LOG_FILE}.")
