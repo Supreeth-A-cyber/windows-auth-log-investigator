@@ -40,6 +40,12 @@ try:
 
     if not found:
         print("No sources met the review threshold.")
+        
+    print("\nAnalyst Assessment:")
+    if found:
+        print("Repeated failed logons detected. Review the related events before deciding whether activity is suspicious.")
+    else:
+        print("No sources met the review threshold in this sample.")
 
 except FileNotFoundError:
     print(f"Error: Could not find {LOG_FILE}.")
