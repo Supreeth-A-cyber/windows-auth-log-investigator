@@ -98,12 +98,14 @@ A Python script that reads simulated Windows authentication events from a CSV fi
 - Groups failed logons by source address.
 - Flags sources with three or more failed logons for further review.
 - Handles missing files and basic data-format errors.
+- Automatically generates a text report containing authentication counts, source-based failure totals, and an analyst assessment.
 
 ### ▶️ How to Run
 1. Install Python 3.
 2. Keep `analyze_auth_logs.py` and `sample_auth_events.csv` in the same folder.
 3. Open Command Prompt in that folder.
 4. Run `py analyze_auth_logs.py`.
+5. The generated report is saved as `reports/authentication_analysis_report.txt`.
 
 ### ⚠️ Important Note
 The current version uses simulated sample data. A repeated-failure alert is a prompt for investigation, not proof of malicious activity.
