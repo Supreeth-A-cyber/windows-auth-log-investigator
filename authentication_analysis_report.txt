@@ -1,0 +1,11 @@
+Authentication Log Analysis Report
+========================================
+Failed logons: 4
+Successful logons: 1
+
+Failed logons by source:
+192.0.2.10: 3
+192.0.2.20: 1
+
+Analyst Assessment:
+Repeated failed logons detected. Review related events before deciding whether activity is suspicious.
