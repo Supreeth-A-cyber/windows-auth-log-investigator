@@ -87,3 +87,23 @@ The following sanitized screenshot shows a Windows Security Event ID 4625 (faile
 ![Sanitized Windows Event 4625 evidence](failed-logon-events.png)
 
 The screenshot hides the computer name and exact event timestamp while retaining the relevant technical fields.
+
+## 🐍 Python Log Analyzer
+
+A Python script that reads simulated Windows authentication events from a CSV file and summarizes login activity.
+
+### ✨ Features
+- Reads event data from `sample_auth_events.csv`.
+- Counts failed logons (Event ID 4625) and successful logons (Event ID 4624).
+- Groups failed logons by source address.
+- Flags sources with three or more failed logons for further review.
+- Handles missing files and basic data-format errors.
+
+### ▶️ How to Run
+1. Install Python 3.
+2. Keep `analyze_auth_logs.py` and `sample_auth_events.csv` in the same folder.
+3. Open Command Prompt in that folder.
+4. Run `py analyze_auth_logs.py`.
+
+### ⚠️ Important Note
+The current version uses simulated sample data. A repeated-failure alert is a prompt for investigation, not proof of malicious activity.
