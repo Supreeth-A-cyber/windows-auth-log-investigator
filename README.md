@@ -62,19 +62,24 @@ A successful unlock after failed attempts does not, by itself, prove that an att
 ```text
 windows-auth-log-investigator/
 ├── README.md
+├── investigation-001.md
+├── failed-logon-events.png
+├── analyze_auth_logs.py
+├── sample_auth_events.csv
 ├── reports/
-│   └── investigation-001.txt
-├── evidence/
+│   └── authentication_analysis_report.txt
 └── screenshots/
+    └── python-analysis-output.png
 ```
+
+The project includes investigation documentation, sanitized Windows event evidence, a Python authentication-log analyzer, simulated sample data, and a generated analysis report.
 
 ## 🚀 Planned Improvements
 
-- Develop a Python script to analyze sanitized Windows event data.
-- Add a structured event timeline and reproducible test cases.
-- Develop and validate detection logic for repeated failed logons.
-- Add sanitized screenshots and supporting evidence.
-- Validate event-code interpretations against official documentation.
+- Add reproducible test cases for normal logons, repeated failures, and malformed or missing input files.
+- Improve event-timeline reporting to make authentication activity easier to review.
+- Validate Windows event interpretations against official Microsoft documentation.
+- Expand detection logic carefully and document its limitations to avoid treating alerts as proof of malicious activity.
 
 ## 🔒 Disclaimer
 
