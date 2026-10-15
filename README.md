@@ -96,6 +96,11 @@ The screenshot hides the computer name and exact event timestamp while retaining
 ## 🐍 Python Log Analyzer
 
 A Python script that reads simulated Windows authentication events from a CSV file and summarizes login activity.
+### 📸 Python Analyzer Output
+
+The screenshot below shows the analyzer running against simulated authentication data and generating its report.
+
+![Python authentication log analyzer output](screenshots/python-analysis-output.png)
 
 ### ✨ Features
 - Reads event data from `sample_auth_events.csv`.
